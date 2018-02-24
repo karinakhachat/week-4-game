@@ -8,6 +8,11 @@ h1, p, h2, div, h3 {font-family: "Share Tech Mono", monospace;}
     width: 100px;
     height: 100px;
   }
+
+  .jumbotron {
+    width: 30%;
+    height: 40%;
+  }
   
   h1 {
     text-align: center;

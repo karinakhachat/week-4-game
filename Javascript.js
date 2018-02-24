@@ -1,13 +1,14 @@
 
   $(document).ready(function() 
-  //the largest parent function start
+  //the largest parent function start 
   {
-    var numberToGuess = 53;
+    var numberToGuess = 111;
     var counter = 0;
-    var number1 = [10];
-    var number2 = [5];
-    var number3 = [3];
-    var number4 = [7];
+    var number1 = [11];
+    var number2 = [7];
+    var number3 = [5];
+    var number4 = [3];
+
 
     $('number1 number2 number3 number4').text(numberToGuess);
     for (var i=0; i< number1.length; i++){
@@ -47,16 +48,18 @@
       $('#crystals').append(imageCrystal4);
     }
     $('#reset').on('click', function(){
-        reset();
+        reset(
+        
+        );
     });
     function reset(){
       console.log("yay!");
       counter = 0;      
       $('#yourNumber').text(counter);
-      number1 = [5];
-      number2 = [3];
-      number3 = [7];
-      number4 = [10];
+      number1 = [11];
+      number2 = [7];
+      number3 = [5];
+      number4 = [3];
       $('number1 number2 number3 number4').text(numberToGuess);
       console.log('Is it working');
     };
@@ -65,7 +68,7 @@
       counter = counter + parseInt($(this).data('num'));
       $('#yourNumber').text(counter);
       if (counter == numberToGuess){
-        alert('You won!');
+        (counter++); 
         reset();
         console.log("try it");
       }
