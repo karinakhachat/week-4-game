@@ -10,8 +10,11 @@ h1, p, h2, div, h3 {font-family: "Share Tech Mono", monospace;}
   }
 
   .jumbotron {
-    width: 30%;
-    height: 40%;
+    background-color: rgb(20, 35, 68);
+    color: silver;
+    width: 650px;
+    height: 400px;
+  
   }
   
   h1 {
