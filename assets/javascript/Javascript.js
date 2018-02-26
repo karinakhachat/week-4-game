@@ -38,7 +38,7 @@ $(document).ready(function()
     function YouWon() {
         alert("You Won you awesome person!");
         wins++;
-        $('#wins').text(wins) + "wins:1";
+        $('#wins').text(wins) + "wins:";
         reset();
     }
     //logs the number of losses to the total and also alerts user they lost
