@@ -8,7 +8,7 @@
     var losses = 0;
 //logging values into the html elements
 
-    $("#numbertoGuess").text (randomnum);
+    $("#numberToGuess").text (randomnum);
     $("#wins").text(wins);
     $("#losses").text(losses);
 
