@@ -35,9 +35,9 @@
         $("#losses").text(losses);
     }
  
-    $("#image1").on("click", CrystalValue(1));
-    $("#image2").on("click", CrystalValue(2));
-    $("image3").on("click", CrystalValue(3));
-    $("image4").on("click", CrystalValue(4));
+    $("#image1").on("click", CrysVals(1));
+    $("#image2").on("click", CrysVals(2));
+    $("image3").on("click", CrystalVals(3));
+    $("image4").on("click", CrystalVals(4));
 
 })
