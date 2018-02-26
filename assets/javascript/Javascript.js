@@ -1,75 +1,82 @@
-$(document).ready(function() 
+
+  $(document).ready(function() 
+  //the largest parent function start 
+  {
+    var numberToGuess = 111;
+    var counter = 0;
+    var number1 = [11];
+    var number2 = [7];
+    var number3 = [5];
+    var number4 = [3];
+
+
+    $('number1 number2 number3 number4').text(numberToGuess);
+    for (var i=0; i< number1.length; i++){
+      var imageCrystal1 = $('<img>');
+      
+      imageCrystal1.attr('data-num', number1[i]);
+      imageCrystal1.attr('src', 'assets/images/greencrystal.png');
+      imageCrystal1.attr('alt', 'green crystal');
+      imageCrystal1.addClass('crystalImage');
+      $('#crystals').append(imageCrystal1);
+    }
+    for (var i=0; i< number2.length; i++){
+      var imageCrystal2 = $('<img>');
+      
+      imageCrystal2.attr('data-num', number2[i]);
+      imageCrystal2.attr('src', 'assets/images/bluecrystal.png');
+      imageCrystal2.attr('alt', 'blue crystal');
+      imageCrystal2.addClass('crystalImage');
+      $('#crystals').append(imageCrystal2);
+    }
+    for (var i=0; i< number3.length; i++){
+      var imageCrystal3 = $('<img>');
+      
+      imageCrystal3.attr('data-num', number3[i]);
+      imageCrystal3.attr('src', 'assets/images/redcrystal.png');
+      imageCrystal3.attr('alt', 'red crystal');
+      imageCrystal3.addClass('crystalImage');
+      $('#crystals').append(imageCrystal3);
+    }
+    for (var i=0; i< number4.length; i++){
+      var imageCrystal4 = $('<img>');
+      
+      imageCrystal4.attr('data-num', number4[i]);
+      imageCrystal4.attr('src', 'assets/images/purplecrystal.png');
+      imageCrystal4.attr('alt', 'purple crystal');
+      imageCrystal4.addClass('crystalImage');
+      $('#crystals').append(imageCrystal4);
+    }
+    $('#reset').on('click', function(){
+        reset(
+        
+        );
+    });
+    function reset(){
+      console.log("yay!");
+      counter = 0;      
+      $('#yourNumber').text(counter);
+      number1 = [11];
+      number2 = [7];
+      number3 = [5];
+      number4 = [3];
+      $('number1 number2 number3 number4').text(numberToGuess);
+      console.log('Is it working');
+    };
+    $('.crystalImage').on('click', function()
     {
-    var Random = Math.floor(Math.random() * 101 + 19)
-    //this will select random number to user
-    //number is going to be between 19-120
-
-    $('#numbertoGuess').append("Random");
-    //will insert result of var Random into the randomnumber id in
-    //in index.html.
-
-    var num1 = Math.floor(Math.random() * 11 + 1)
-    var num2 = Math.floor(Math.random() * 11 + 1)
-    var num3 = Math.floor(Math.random() * 11 + 1)
-    var num4 = Math.floor(Math.random() * 11 + 1)
-    //setting a random number for each crystal
-    //sets a number 1-12 at random to each crystal
-    var UserTotal = 0;
-    var wins = 0;
-    var losses = 0;
-    // setting each var value to 0 so we can use them further
-
-    $('#wins').text(wins);
-    $('#wins').text(losses);
-    //resets the number of losses and wins to 0 again
-   
-    function reset() {
-        Random = Math.floor(Math() * 101 + 19);
-        console.log(Random)
-        $('numbertoGuess').text(Random);
-        num1 = Math.floor(Math.random() * 11 + 1);
-        num2 = Math.floor(Math.random() * 11 + 1);
-        num3 = Math.floor(Math.random() * 11 + 1);
-        num4 = Math.floor(Math.random() * 11 + 1);
-        var UserTotal = 0
-        $('#YourTotal').text(UserTotal);
-    }
-    //logs number of wins to the total also alerts user they won
-    function YouWon() {
-        wins++;
-        $('#winslosses').text(wins) + "wins:";
+      counter = counter + parseInt($(this).data('num'));
+      $('#yourNumber').text(counter);
+      if (counter == numberToGuess){
+        (counter++); 
         reset();
-    }
-    //logs the number of losses to the total and also alerts user they lost
-    function loser() {
-        losses++;
-        $('#winslosses').text(losses);
+        console.log("try it");
+      }
+      else if( counter > numberToGuess){
+        alert('You lost!');
         reset();
-    }
-    // this is what makes the click a crystal work
-    $('FirstCrystal').on('click', function () {
-        UserTotal = userTotal + num1;
-        console.log("New UserTotal= " + UserTotal);
-        if (userTotal == Random) {
-            YouWon();
-        }
-        else if (userTotal > Random) {
-
-            loser();
-        } 
-        $('#winslosses').text(UserTotal);
-    })
-
-        $('SecondCrystal').on('click', function () {
-            UserTotal = userTotal + num2;
-            console.log("New UserTotal=" + UserTotal);
-            $('#YourTotal').text(UserTotal);
-        })
-
-        $('ThreeCrystal').on('click', function () {
-            UserTotal = userTotal + num3;
-            console.log("New UserTotal= " + UserTotal);
-            $('#YourTotal').text(UserTotal)});
-            
-        })
+      }
+    });
+  
+});
    
