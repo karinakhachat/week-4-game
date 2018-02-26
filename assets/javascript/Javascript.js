@@ -4,7 +4,7 @@ $(document).ready(function()
     //this will select random number to user
     //number is going to be between 19-120
 
-    $('#RandomNumber').text(Random);
+    $('#numbertoGuess').append("Random");
     //will insert result of var Random into the randomnumber id in
     //in index.html.
 
@@ -26,53 +26,50 @@ $(document).ready(function()
     function reset() {
         Random = Math.floor(Math() * 101 + 19);
         console.log(Random)
-        $('#RandomNumber').text(Random);
+        $('numbertoGuess').text(Random);
         num1 = Math.floor(Math.random() * 11 + 1);
         num2 = Math.floor(Math.random() * 11 + 1);
         num3 = Math.floor(Math.random() * 11 + 1);
         num4 = Math.floor(Math.random() * 11 + 1);
         var UserTotal = 0
-        $('#FinalTotal').text(UserTotal);
+        $('#YourTotal').text(UserTotal);
     }
     //logs number of wins to the total also alerts user they won
     function YouWon() {
-        alert("You Won you awesome person!");
         wins++;
-        $('#wins').text(wins) + "wins:";
+        $('#winslosses').text(wins) + "wins:";
         reset();
     }
     //logs the number of losses to the total and also alerts user they lost
     function loser() {
-        alert("You lost Sucka!");
         losses++;
-        $('#NumerofLosses').text(losses);
+        $('#winslosses').text(losses);
         reset();
     }
     // this is what makes the click a crystal work
     $('FirstCrystal').on('click', function () {
-
-
         UserTotal = userTotal + num1;
         console.log("New UserTotal= " + UserTotal);
-        $('#FinalTotal').text(UserTotal);
         if (userTotal == Random) {
             YouWon();
         }
         else if (userTotal > Random) {
 
             loser();
-        }
+        } 
+        $('#winslosses').text(UserTotal);
     })
+
         $('SecondCrystal').on('click', function () {
             UserTotal = userTotal + num2;
             console.log("New UserTotal=" + UserTotal);
-            $('#FinalTotal').text(UserTotal);
+            $('#YourTotal').text(UserTotal);
         })
 
         $('ThreeCrystal').on('click', function () {
             UserTotal = userTotal + num3;
             console.log("New UserTotal= " + UserTotal);
-            $('#FinalTotal').text(UserTotal)});
+            $('#YourTotal').text(UserTotal)});
             
         })
    
