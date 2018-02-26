@@ -1,4 +1,4 @@
-$(document).ready(function () 
+$(document).ready(function() 
     {
     var Random = Math.floor(Math.random() * 101 + 19)
     //this will select random number to user
@@ -19,8 +19,8 @@ $(document).ready(function ()
     var losses = 0;
     // setting each var value to 0 so we can use them further
 
-    $('#NumberofWins').text(wins);
-    $('NumberofLosses').text(losses);
+    $('#wins').text(wins);
+    $('#wins').text(losses);
     //resets the number of losses and wins to 0 again
    
     function reset() {
@@ -38,7 +38,7 @@ $(document).ready(function ()
     function YouWon() {
         alert("You Won you awesome person!");
         wins++;
-        $('#NumberofWins').text(wins);
+        $('#wins').text(wins) + "wins:1";
         reset();
     }
     //logs the number of losses to the total and also alerts user they lost
@@ -62,6 +62,7 @@ $(document).ready(function ()
 
             loser();
         }
+    })
         $('SecondCrystal').on('click', function () {
             UserTotal = userTotal + num2;
             console.log("New UserTotal=" + UserTotal);
@@ -71,6 +72,7 @@ $(document).ready(function ()
         $('ThreeCrystal').on('click', function () {
             UserTotal = userTotal + num3;
             console.log("New UserTotal= " + UserTotal);
-            $('#FinalTotal').text(UserTotal)};
-        
-        )}
+            $('#FinalTotal').text(UserTotal)});
+            
+        })
+   
