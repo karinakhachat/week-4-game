@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(function () 
+    {
     var Random = Math.floor(Math.random() * 101 + 19)
     //this will select random number to user
     //number is going to be between 19-120
@@ -7,13 +8,12 @@ $(document).ready(function () {
     //will insert result of var Random into the randomnumber id in
     //in index.html.
 
-    var num1 = Math.floor(math.random() * 11 + 1)
+    var num1 = Math.floor(Math.random() * 11 + 1)
     var num2 = Math.floor(Math.random() * 11 + 1)
     var num3 = Math.floor(Math.random() * 11 + 1)
     var num4 = Math.floor(Math.random() * 11 + 1)
     //setting a random number for each crystal
     //sets a number 1-12 at random to each crystal
-
     var UserTotal = 0;
     var wins = 0;
     var losses = 0;
@@ -22,7 +22,7 @@ $(document).ready(function () {
     $('#NumberofWins').text(wins);
     $('NumberofLosses').text(losses);
     //resets the number of losses and wins to 0 again
-
+   
     function reset() {
         Random = Math.floor(Math() * 101 + 19);
         console.log(Random)
@@ -50,6 +50,8 @@ $(document).ready(function () {
     }
     // this is what makes the click a crystal work
     $('FirstCrystal').on('click', function () {
+
+
         UserTotal = userTotal + num1;
         console.log("New UserTotal= " + UserTotal);
         $('#FinalTotal').text(UserTotal);
@@ -60,7 +62,6 @@ $(document).ready(function () {
 
             loser();
         }
-    
         $('SecondCrystal').on('click', function () {
             UserTotal = userTotal + num2;
             console.log("New UserTotal=" + UserTotal);
@@ -72,4 +73,4 @@ $(document).ready(function () {
             console.log("New UserTotal= " + UserTotal);
             $('#FinalTotal').text(UserTotal)};
         
-    )}
+        )}
