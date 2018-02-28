@@ -1,7 +1,7 @@
 
-$(document).ready(function (){
+$(document).ready(function ()
 //the largest parent function start 
-{
+{})
     
     var usertotal = 0;
     var wins = 0;
@@ -14,38 +14,19 @@ $(document).ready(function (){
     $("#wins").text(wins);
     $("#losses").text(losses);
     //this part is working as expected
+    
     function init(){
-          $(".crystals").each(function(images)
-          {
-            for (i = 0; 1 < 4; i++)
-            {
-          var randomnum = Math.floor(Math.random() * 12) + 1; 
+          function start(){
+            var images = [];
+            $(".crystals").each(function(){
+              images.push($(this).attr('src'))
+            })
+            console.log(images);
+          }
+           
         }
       console.log(randomnum);
-    })
-        };
-
-    function onclick () {
-       $(".crystals").each(images).onclick("click", function(){
-        var crystalval = ($(this).randomnum);
-
-        usertotal += crystalval;
-        $("#YourTotal").text(usertotal);
-
-        if (usertotal === targetnumber) {
-            wins++;
-        $("#wins").append(wins++);
-        }
-
-        else if (usertotal >= targetnumber) {
-            losses++;
-        $("#losses").append(losses++);
-        }
-       })
-
-        
-    }
-
+  
       
         //not working not assigning images crystal values
     function reset() {
@@ -62,7 +43,7 @@ $(document).ready(function (){
     }
     //calling the functions
     init();
+    onclick();
     reset();
 
-}
-})
+
