@@ -1,50 +1,53 @@
 
-$(document).ready(function ()
+$(document).ready(function (){
 //the largest parent function start 
 {
     
     var usertotal = 0;
     var wins = 0;
-    var losses = 0;
-    var numberOptions = [10,5,3,7];
-    var targetnumber = 53;
+    var losses = 0
+    var targetnumber = Math.floor(Math.random()* 120) -1;
+  
     //logging values into the html elements
     //working thus far
     $("#numberToGuess").text(targetnumber);
     $("#wins").text(wins);
     $("#losses").text(losses);
     //this part is working as expected
-    function init() {
-        var randomnum = Math.floor(Math.random() * 12) + 1;
-        
-        $("#image1").attr("data-num", randomnum);
-        $("#image2").attr("date-num", randomnum);
-        $("#image3").attr("data-num", randomnum);
-        $("#image4").attr("date-num", randomnum);
-
-
-        $("#image1").on("click", randomnum);
-        $("#image2").on("click", randomnum);
-        $("#image3").on("click", randomnum);
-        $("#image4").on("click", randomnum);
-        //not working not assigning images crystal values
-
-        function NewTotal() {
-            usertotal = usertotal + CrysVals[NewTotal];
-            console.log("new total" + usertotal);
-            $("#YourTotal").text(usertotal);
-
-            if (usertotal === randomnum) {
-                wins++;
-                $("#wins").text(wins);
-            }
-
-            else if (usertotal > randomnum) {
-                losses++;
-                $("#losses").text(losses);
-            }
+    function init(){
+          $(".crystals").each(function(images)
+          {
+            for (i = 0; 1 < 4; i++)
+            {
+          var randomnum = Math.floor(Math.random() * 12) + 1; 
         }
+      console.log(randomnum);
+    })
+        };
+
+    function onclick () {
+       $(".crystals").each(images).onclick("click", function(){
+        var crystalval = ($(this).randomnum);
+
+        usertotal += crystalval;
+        $("#YourTotal").text(usertotal);
+
+        if (usertotal === targetnumber) {
+            wins++;
+        $("#wins").append(wins++);
+        }
+
+        else if (usertotal >= targetnumber) {
+            losses++;
+        $("#losses").append(losses++);
+        }
+       })
+
+        
     }
+
+      
+        //not working not assigning images crystal values
     function reset() {
         if (wins++)
             usertotal= 0;
@@ -61,4 +64,5 @@ $(document).ready(function ()
     init();
     reset();
 
+}
 })
