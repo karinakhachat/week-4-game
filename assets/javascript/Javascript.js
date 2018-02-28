@@ -15,16 +15,18 @@ $(document).ready(function ()
     $("#losses").text(losses);
     //this part is working as expected
     function init() {
+        var randomnum = Math.floor(Math.random() * 12) + 1;
         
-        imageCrystal1[1] = Math.floor(Math.random() * 12 + 1);
-        imageCrystal2[2] = Math.floor(Math.random() * 12 + 1);
-        imageCrystal3[3] = Math.floor(Math.random() * 12 + 1);
-        imageCrystal4[4] = Math.floor(Math.random() * 12 + 1);
+        $("#image1").attr("data-num", randomnum);
+        $("#image2").attr("date-num", randomnum);
+        $("#image3").attr("data-num", randomnum);
+        $("#image4").attr("date-num", randomnum);
 
-        $("#image1").on("click", CrysVals(1));
-        $("#image2").on("click", CrysVals(2));
-        $("#image3").on("click", CrystalVals(3));
-        $("#image4").on("click", CrystalVals(4));
+
+        $("#image1").on("click", randomnum);
+        $("#image2").on("click", randomnum);
+        $("#image3").on("click", randomnum);
+        $("#image4").on("click", randomnum);
         //not working not assigning images crystal values
 
         function NewTotal() {
