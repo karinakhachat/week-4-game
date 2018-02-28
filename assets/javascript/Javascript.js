@@ -1,7 +1,5 @@
 $(document).ready(function (){
     //the largest parent function start 
-    {
-        
         var usertotal = 0;
         var wins = 0;
         var losses = 0
@@ -14,23 +12,18 @@ $(document).ready(function (){
         $("#losses").text(losses);
         //this part is working as expected
         function init(){
-              $(".crystals").each(function(images)
-              {
-                for (i = 0; 1 < 4; i++)
-                {
+              $(".crystals").each(function(image){
               var randomnum = Math.floor(Math.random() * 12) + 1; 
-            }
-          console.log(randomnum);
-        })
-            };
-    
+                $(image).val(randomnum);}
+        }
+           
+    //the onclick function should assign a randomnum to each crystal each time a user clicks
         function onclick () {
-           $(".crystals").each(images).onclick("click", function(){
-            var crystalval = ($(this).randomnum);
-    
-            usertotal += crystalval;
-            $("#YourTotal").text(usertotal);
-    
+            $(".crystals").each(function(index, image){
+                var randomnum = Math.floor(Math.random() * 12) + 1;
+                  $(image).val(randomnum);}
+          }
+            function logwins (){
             if (usertotal === targetnumber) {
                 wins++;
             $("#wins").append(wins++);
@@ -45,7 +38,6 @@ $(document).ready(function (){
             
         }
     
-          
             //not working not assigning images crystal values
         function reset() {
             if (wins++)
@@ -61,7 +53,8 @@ $(document).ready(function (){
         }
         //calling the functions
         init();
-        reset();
-    
+        reset();      usertotal += crystalval;
+            $("#YourTotal").text(usertotal);}
+      
     }
-    })
+}
